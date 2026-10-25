@@ -125,7 +125,7 @@
       </div>
 
       <div class="time-block" style="border-left-color: var(--green);">
-        <div class="time-block-title" style="color: var(--green);" id="swim-block-header">🌙 Afternoon Block & Swim</div>
+        <div class="time-block-title" style="color: var(--green);">🌙 Afternoon Block & Swim</div>
         <div id="swim-container" style="margin-bottom: 12px;"></div>
         
         <div class="input-group">
@@ -267,4 +267,95 @@
         </div>
         <div class="photo-card">
           <h4>Month 1</h4>
-          <div class="photo-preview" id="prev-p3"><span style="color:var(--text-muted);font-
+          <div class="photo-preview" id="prev-p3"><span style="color:var(--text-muted);font-size:0.75rem;">No Photo</span></div>
+          <div class="photo-date-stamp" id="date-p3">Pending</div>
+          <label class="file-btn">Upload <input type="file" accept="image/*" style="display:none;" onchange="handlePhoto(this, 'p3')"></label>
+        </div>
+        <div class="photo-card">
+          <h4>Month 2</h4>
+          <div class="photo-preview" id="prev-p4"><span style="color:var(--text-muted);font-size:0.75rem;">No Photo</span></div>
+          <div class="photo-date-stamp" id="date-p4">Pending</div>
+          <label class="file-btn">Upload <input type="file" accept="image/*" style="display:none;" onchange="handlePhoto(this, 'p4')"></label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 5: MASTER PLAN & EXRX DIRECTORY -->
+  <div id="tab-plan" class="tab-content">
+    <div class="card">
+      <h2>Program Overview & Exercise Directory</h2>
+      <p class="card-subtitle">Detailed breakdown of lifts with official ExRx mechanics references.</p>
+      
+      <div class="plan-section">
+        <h3>Monday: Upper Body A</h3>
+        <p style="font-size:0.8rem; color:var(--text-muted);">DB Flat Bench Press, Assisted Pull-Up Machine, Standing DB Overhead Press, Seated Cable Row, Cable Rope Bicep Curls.</p>
+        <a href="https://exrx.net/WeightExercises/PectoralisSternal/DBBenchPress" target="_blank" class="plan-link">🔗 ExRx: DB Bench Press</a><br>
+        <a href="https://exrx.net/WeightExercises/LatissimusDorsi/AstPullup" target="_blank" class="plan-link">🔗 ExRx: Assisted Pull-Up</a><br>
+        <a href="https://exrx.net/WeightExercises/DeltoidAnterior/DBShoulderPress" target="_blank" class="plan-link">🔗 ExRx: DB Overhead Press</a><br>
+        <a href="https://exrx.net/WeightExercises/BackGeneral/CBSeatedRow" target="_blank" class="plan-link">🔗 ExRx: Seated Cable Row</a><br>
+        <a href="https://exrx.net/WeightExercises/Biceps/CBPurgeCurl" target="_blank" class="plan-link">🔗 ExRx: Cable Bicep Curl</a>
+      </div>
+
+      <div class="plan-section">
+        <h3>Tuesday: Swim & Recovery</h3>
+        <p style="font-size:0.8rem; color:var(--text-muted);">Balham Pool Laps (12:45 - 1:45 PM) + Active Recovery.</p>
+        <a href="https://exrx.net/Aerobic/Swimming" target="_blank" class="plan-link">🔗 ExRx: Swimming Aerobic Guide</a>
+      </div>
+
+      <div class="plan-section">
+        <h3>Wednesday: Conditioning & Core</h3>
+        <p style="font-size:0.8rem; color:var(--text-muted);">Kettlebell Swings, DB Thrusters, Rowing Machine Sprint, Hanging Knee Raises.</p>
+        <a href="https://exrx.net/WeightExercises/Kettlebell/KB(TwoArm)Swing" target="_blank" class="plan-link">🔗 ExRx: Kettlebell Swing</a><br>
+        <a href="https://exrx.net/WeightExercises/OlympicLifts/DBThruster" target="_blank" class="plan-link">🔗 ExRx: DB Thruster</a><br>
+        <a href="https://exrx.net/Aerobic/RowingErgometer" target="_blank" class="plan-link">🔗 ExRx: Rowing Ergometer</a><br>
+        <a href="https://exrx.net/WeightExercises/RectusAbdominis/HangingKneeRaise" target="_blank" class="plan-link">🔗 ExRx: Hanging Knee Raise</a>
+      </div>
+
+      <div class="plan-section">
+        <h3>Thursday: Upper Body B</h3>
+        <p style="font-size:0.8rem; color:var(--text-muted);">Incline DB Press, Assisted Pull-Up Machine, Wide-Grip Lat Pulldown, DB Lateral Raises, Tricep Rope Pushdowns.</p>
+        <a href="https://exrx.net/WeightExercises/PectoralisClavicular/DBInclineBenchPress" target="_blank" class="plan-link">🔗 ExRx: Incline DB Press</a><br>
+        <a href="https://exrx.net/WeightExercises/LatissimusDorsi/CBHighRow" target="_blank" class="plan-link">🔗 ExRx: Lat Pulldown</a><br>
+        <a href="https://exrx.net/WeightExercises/DeltoidLateral/DBLateralRaise" target="_blank" class="plan-link">🔗 ExRx: DB Lateral Raise</a><br>
+        <a href="https://exrx.net/WeightExercises/Triceps/CBExtension" target="_blank" class="plan-link">🔗 ExRx: Tricep Pushdown</a>
+      </div>
+
+      <div class="plan-section">
+        <h3>Friday: Lower Body & Core</h3>
+        <p style="font-size:0.8rem; color:var(--text-muted);">DB Goblet Squats, Leg Press Machine, Lying / Seated Leg Curls, Abdominal Crunch Machine.</p>
+        <a href="https://exrx.net/WeightExercises/Quadriceps/DBGobletSquat" target="_blank" class="plan-link">🔗 ExRx: Goblet Squat</a><br>
+        <a href="https://exrx.net/WeightExercises/Quadriceps/MLegPress" target="_blank" class="plan-link">🔗 ExRx: Leg Press</a><br>
+        <a href="https://exrx.net/WeightExercises/Hamstrings/MLegCurl" target="_blank" class="plan-link">🔗 ExRx: Leg Curl</a><br>
+        <a href="https://exrx.net/WeightExercises/RectusAbdominis/MAbsCrunch" target="_blank" class="plan-link">🔗 ExRx: Ab Crunch Machine</a>
+      </div>
+
+      <div class="plan-section">
+        <h3>Saturday & Sunday</h3>
+        <p style="font-size:0.8rem; color:var(--text-muted);">Weekend Swim sessions & active recovery.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="nav-tabs">
+  <button class="tab-btn active" onclick="switchTab('today', this)">
+    <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+    Today
+  </button>
+  <button class="tab-btn" onclick="switchTab('ahead', this)">
+    <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+    Week Ahead
+  </button>
+  <button class="tab-btn" onclick="switchTab('progress', this)">
+    <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+    Progress
+  </button>
+  <button class="tab-btn" onclick="switchTab('photos', this)">
+    <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+    Photos
+  </button>
+  <button class="tab-btn" onclick="switchTab('plan', this)">
+    <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4
