@@ -14,119 +14,195 @@
             --accent-glow: rgba(59, 130, 246, 0.3);
             --success: #22c55e;
             --border: #334155;
+            --danger: #ef4444;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-main); padding: 12px; max-width: 600px; margin: 0 auto; padding-bottom: 80px; }
-        header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding: 10px; background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border); }
-        h1 { font-size: 1.2rem; font-weight: 700; color: var(--accent); }
+        body { background-color: var(--bg-color); color: var(--text-main); padding: 12px; max-width: 600px; margin: 0 auto; padding-bottom: 90px; }
         
+        header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; padding: 12px 16px; background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border); }
+        h1 { font-size: 1.15rem; font-weight: 700; color: var(--accent); }
+        .streak-badge { font-size: 0.85rem; color: var(--success); font-weight: 600; background: rgba(34, 197, 94, 0.1); padding: 4px 8px; border-radius: 6px; border: 1px solid rgba(34, 197, 94, 0.2); }
+
         /* Date Navigator */
-        .date-navigator { display: flex; align-items: center; justify-content: space-between; background: var(--card-bg); padding: 8px 12px; border-radius: 10px; border: 1px solid var(--border); margin-bottom: 16px; }
-        .date-navigator button { background: var(--border); border: none; color: var(--text-main); padding: 6px 12px; border-radius: 6px; font-weight: 600; cursor: pointer; }
-        .date-navigator span { font-weight: 600; font-size: 0.95rem; }
+        .date-navigator { display: flex; align-items: center; justify-content: space-between; background: var(--card-bg); padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .date-navigator button { background: var(--border); border: none; color: var(--text-main); padding: 6px 12px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: 0.2s; }
+        .date-navigator button:active { background: var(--accent); }
+        .date-info { text-align: center; }
+        .date-info span { display: block; font-weight: 700; font-size: 0.95rem; color: var(--text-main); }
+        .date-info small { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
 
         .card { background: var(--card-bg); border-radius: 12px; padding: 16px; margin-bottom: 16px; border: 1px solid var(--border); }
-        h2 { font-size: 1rem; margin-bottom: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+        h2 { font-size: 0.95rem; margin-bottom: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; display: flex; justify-content: space-between; align-items: center; }
         
         .form-group { margin-bottom: 12px; }
-        label { display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 4px; }
-        input, select, textarea { width: 100%; padding: 10px; background: var(--bg-color); border: 1px solid var(--border); border-radius: 8px; color: var(--text-main); font-size: 1rem; }
-        textarea { resize: vertical; height: 70px; }
+        label { display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px; font-weight: 500; }
+        input, select, textarea { width: 100%; padding: 10px 12px; background: var(--bg-color); border: 1px solid var(--border); border-radius: 8px; color: var(--text-main); font-size: 0.95rem; }
+        textarea { resize: vertical; height: 65px; }
 
-        .habit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-        .habit-btn { background: var(--bg-color); border: 1px solid var(--border); color: var(--text-muted); padding: 12px; border-radius: 8px; text-align: center; font-weight: 600; cursor: pointer; transition: 0.2s; }
-        .habit-btn.active { background: var(--success); color: #fff; border-color: var(--success); }
+        .habit-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+        .habit-btn { background: var(--bg-color); border: 1px solid var(--border); color: var(--text-muted); padding: 10px 6px; border-radius: 8px; text-align: center; font-weight: 600; font-size: 0.75rem; cursor: pointer; transition: 0.2s; }
+        .habit-btn.active { background: var(--success); color: #fff; border-color: var(--success); box-shadow: 0 0 10px rgba(34, 197, 94, 0.3); }
 
-        .btn-primary { width: 100%; background: var(--accent); color: white; border: none; padding: 14px; border-radius: 10px; font-weight: 700; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 12px var(--accent-glow); }
-        .btn-secondary { background: var(--border); color: var(--text-main); border: none; padding: 10px; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; margin-top: 8px; }
+        /* Workout Specific Styles */
+        .exercise-card { background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); border-radius: 10px; padding: 12px; margin-bottom: 12px; }
+        .exercise-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .exercise-title { font-weight: 600; font-size: 0.95rem; color: var(--text-main); }
+        .set-row { display: grid; grid-template-columns: 50px 1fr 1fr 40px; gap: 8px; align-items: center; margin-bottom: 6px; font-size: 0.85rem; }
+        .set-row input { padding: 6px; text-align: center; font-size: 0.9rem; }
+        .set-complete-btn { background: var(--border); border: none; color: var(--text-muted); border-radius: 6px; height: 34px; font-weight: bold; cursor: pointer; }
+        .set-complete-btn.active { background: var(--success); color: white; }
 
-        nav { position: fixed; bottom: 0; left: 0; right: 0; background: var(--card-bg); display: flex; justify-content: space-around; padding: 12px; border-top: 1px solid var(--border); max-width: 600px; margin: 0 auto; }
-        nav button { background: none; border: none; color: var(--text-muted); font-size: 0.8rem; font-weight: 600; cursor: pointer; }
+        .btn-primary { width: 100%; background: var(--accent); color: white; border: none; padding: 14px; border-radius: 10px; font-weight: 700; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 12px var(--accent-glow); transition: 0.2s; }
+        .btn-primary:active { transform: scale(0.98); }
+        .btn-secondary { background: var(--border); color: var(--text-main); border: none; padding: 10px; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; margin-top: 8px; font-size: 0.9rem; }
+
+        /* Bottom Nav */
+        nav { position: fixed; bottom: 0; left: 0; right: 0; background: var(--card-bg); display: flex; justify-content: space-around; padding: 10px 0; border-top: 1px solid var(--border); max-width: 600px; margin: 0 auto; z-index: 100; backdrop-filter: blur(8px); }
+        nav button { background: none; border: none; color: var(--text-muted); font-size: 0.75rem; font-weight: 600; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 3px; width: 25%; }
         nav button.active { color: var(--accent); }
+        nav span.nav-icon { font-size: 1.2rem; }
 
         .tab-content { display: none; }
         .tab-content.active { display: block; }
+        
+        .scoreboard-item { background: rgba(15, 23, 42, 0.4); border: 1px solid var(--border); padding: 12px; border-radius: 8px; margin-bottom: 8px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>Pocket PT</h1>
-        <span id="current-streak" style="font-size: 0.85rem; color: var(--success);">🔥 0 Day Streak</span>
+        <div class="streak-badge" id="current-streak">🔥 0 Day Streak</div>
     </header>
 
     <!-- Date Navigator Bar -->
     <div class="date-navigator">
-        <button onclick="changeDate(-1)">◀ Prev</button>
-        <span id="display-date">Today</span>
-        <button onclick="changeDate(1)">Next ▶</button>
+        <button onclick="changeDate(-1)">◀ Prev Day</button>
+        <div class="date-info">
+            <span id="display-date-title">Today</span>
+            <small id="display-date-sub">Loading...</small>
+        </div>
+        <button onclick="changeDate(1)">Next Day ▶</button>
     </div>
 
-    <!-- TAB 1: TODAY / LOGGING -->
+    <!-- TAB 1: DAILY LOG -->
     <div id="tab-today" class="tab-content active">
         <div class="card">
-            <h2>Daily Core Metrics</h2>
+            <h2>Core Metrics & Mood</h2>
             <div class="form-group">
                 <label>Body Weight (kg)</label>
                 <input type="number" id="log-weight" step="0.1" placeholder="e.g. 78.5">
             </div>
             <div class="form-group">
-                <label>Mood & Medication Notes</label>
-                <textarea id="log-mood" placeholder="Energy levels, focus, medication impact..."></textarea>
+                <label>Mood / Medication Notes</label>
+                <textarea id="log-mood" placeholder="Energy levels, focus, medication impact, general feeling..."></textarea>
             </div>
         </div>
 
         <div class="card">
             <h2>Daily Habits</h2>
             <div class="habit-grid">
-                <button type="button" class="habit-btn" id="habit-huel" onclick="toggleHabit('huel')">Black Huel</button>
-                <button type="button" class="habit-btn" id="habit-gym" onclick="toggleHabit('gym')">Workout Logged</button>
+                <button type="button" class="habit-btn" id="habit-huel" onclick="toggleHabit('huel')">Huel</button>
+                <button type="button" class="habit-btn" id="habit-gym" onclick="toggleHabit('gym')">Workout</button>
                 <button type="button" class="habit-btn" id="habit-steps" onclick="toggleHabit('steps')">10k Steps</button>
                 <button type="button" class="habit-btn" id="habit-water" onclick="toggleHabit('water')">Hydration</button>
             </div>
         </div>
 
-        <button class="btn-primary" onclick="saveDailyLog()">Save Entry</button>
+        <div class="card">
+            <h2>Today's Workout Session</h2>
+            <div id="workout-container">
+                <!-- Dynamic Workout Injection -->
+            </div>
+        </div>
+
+        <button class="btn-primary" onclick="saveDailyLog()">Save Day Entry</button>
     </div>
 
     <!-- TAB 2: SCOREBOARD -->
     <div id="tab-scoreboard" class="tab-content">
         <div class="card">
             <h2>Underdog Scoreboard</h2>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">Tracking transformation momentum from Day 1 baseline.</p>
-            <div id="stats-summary" style="margin-top: 12px; font-size: 0.95rem;"></div>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px;">Historical record of logs and transformation momentum.</p>
+            <div id="scoreboard-list"></div>
         </div>
     </div>
 
     <!-- TAB 3: SETTINGS & BACKUP -->
     <div id="tab-settings" class="tab-content">
         <div class="card">
-            <h2>Data & Backup</h2>
-            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px;">Export all your local logs to a JSON backup file for total safety.</p>
+            <h2>Data Management</h2>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px;">Back up your local browser storage securely to your device.</p>
             <button class="btn-secondary" onclick="exportData()">Export Data (.json)</button>
         </div>
     </div>
 
     <!-- BOTTOM NAVIGATION -->
     <nav>
-        <button onclick="switchTab('today')" id="nav-today" class="active">📅 Log</button>
-        <button onclick="switchTab('scoreboard')" id="nav-scoreboard">🏆 Scoreboard</button>
-        <button onclick="switchTab('settings')" id="nav-settings">⚙️ Settings</button>
+        <button onclick="switchTab('today')" id="nav-today" class="active">
+            <span class="nav-icon">📅</span>Log
+        </button>
+        <button onclick="switchTab('scoreboard')" id="nav-scoreboard">
+            <span class="nav-icon">🏆</span>Scoreboard
+        </button>
+        <button onclick="switchTab('settings')" id="nav-settings">
+            <span class="nav-icon">⚙️</span>Settings
+        </button>
     </nav>
 
     <script>
-        let currentDate = new Date().toISOString().split('T')[0];
+        // Get today's date in local YYYY-MM-DD
+        function getLocalDateString(d = new Date()) {
+            const offset = d.getTimezoneOffset();
+            const localDate = new Date(d.getTime() - (offset*60*1000));
+            return localDate.toISOString().split('T')[0];
+        }
+
+        let currentDate = getLocalDateString();
         let appData = JSON.parse(localStorage.getItem('pocket_pt_data')) || {};
 
+        // Sample Workout Structure based on day of week
+        function getRoutineForDate(dateStr) {
+            const dayOfWeek = new Date(dateStr).getDay();
+            // 1: Mon, 3: Wed, 5: Fri as active lifting days example, can customize
+            if (dayOfWeek === 1 || dayOfWeek === 3 || dayOfWeek === 5) {
+                return [
+                    { name: "Weighted Pull-ups", sets: 3, targetReps: "6-8" },
+                    { name: "Cable Rope Push-downs", sets: 3, targetReps: "10-12" },
+                    { name: "Kettlebell Romanian Deadlifts", sets: 3, targetReps: "10-12" }
+                ];
+            } else if (dayOfWeek === 2 || dayOfWeek === 4) {
+                return [
+                    { name: "Stationary Bike Intervals", sets: 1, targetReps: "30 mins" },
+                    { name: "Rowing Machine Steady State", sets: 1, targetReps: "20 mins" }
+                ];
+            } else {
+                return [
+                    { name: "Active Recovery / Mobility", sets: 1, targetReps: "15 mins" }
+                ];
+            }
+        }
+
         function updateDateDisplay() {
-            document.getElementById('display-date').innerText = currentDate;
+            const todayStr = getLocalDateString();
+            const titleEl = document.getElementById('display-date-title');
+            const subEl = document.getElementById('display-date-sub');
+            
+            if (currentDate === todayStr) {
+                titleEl.innerText = "Today";
+            } else {
+                titleEl.innerText = currentDate;
+            }
+            subEl.innerText = new Date(currentDate).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+            
             loadDayData(currentDate);
+            renderWorkoutUI(currentDate);
         }
 
         function changeDate(days) {
             let d = new Date(currentDate);
             d.setDate(d.getDate() + days);
-            currentDate = d.toISOString().split('T')[0];
+            currentDate = getLocalDateString(d);
             updateDateDisplay();
         }
 
@@ -139,7 +215,7 @@
         }
 
         function toggleHabit(habitKey) {
-            if (!appData[currentDate]) appData[currentDate] = { habits: {} };
+            if (!appData[currentDate]) appData[currentDate] = { habits: {}, workout: {} };
             if (!appData[currentDate].habits) appData[currentDate].habits = {};
             appData[currentDate].habits[habitKey] = !appData[currentDate].habits[habitKey];
             renderHabits();
@@ -154,11 +230,63 @@
             });
         }
 
+        function renderWorkoutUI(dateStr) {
+            const routine = getRoutineForDate(dateStr);
+            const container = document.getElementById('workout-container');
+            const dayData = (appData[dateStr] && appData[dateStr].workout) || {};
+            
+            let html = '';
+            routine.forEach((ex, exIdx) => {
+                html += `<div class="exercise-card">
+                    <div class="exercise-header">
+                        <span class="exercise-title">${ex.name}</span>
+                        <span style="font-size:0.75rem; color:var(--text-muted);">Target: ${ex.targetReps}</span>
+                    </div>`;
+                
+                for(let s = 0; s < ex.sets; s++) {
+                    const savedSet = (dayData[exIdx] && dayData[exIdx][s]) || { weight: '', reps: '', done: false };
+                    html += `<div class="set-row">
+                        <span>Set ${s+1}</span>
+                        <input type="number" placeholder="kg" id="w-${exIdx}-${s}" value="${savedSet.weight || ''}">
+                        <input type="number" placeholder="reps" id="r-${exIdx}-${s}" value="${savedSet.reps || ''}">
+                        <button type="button" class="set-complete-btn ${savedSet.done ? 'active' : ''}" id="btn-${exIdx}-${s}" onclick="toggleSet(${exIdx}, ${s})">✓</button>
+                    </div>`;
+                }
+                html += `</div>`;
+            });
+            container.innerHTML = html;
+        }
+
+        function toggleSet(exIdx, setIdx) {
+            const btn = document.getElementById(`btn-${exIdx}-${setIdx}`);
+            btn.classList.toggle('active');
+        }
+
         function saveDailyLog() {
-            if (!appData[currentDate]) appData[currentDate] = { habits: {} };
+            if (!appData[currentDate]) appData[currentDate] = { habits: {}, workout: {} };
+            
             appData[currentDate].weight = document.getElementById('log-weight').value;
             appData[currentDate].mood = document.getElementById('log-mood').value;
-            
+
+            // Save workout sets state
+            const routine = getRoutineForDate(currentDate);
+            appData[currentDate].workout = {};
+            routine.forEach((ex, exIdx) => {
+                appData[currentDate].workout[exIdx] = {};
+                for(let s = 0; s < ex.sets; s++) {
+                    const wInput = document.getElementById(`w-${exIdx}-${s}`);
+                    const rInput = document.getElementById(`r-${exIdx}-${s}`);
+                    const btn = document.getElementById(`btn-${exIdx}-${s}`);
+                    if(wInput && rInput && btn) {
+                        appData[currentDate].workout[exIdx][s] = {
+                            weight: wInput.value,
+                            reps: rInput.value,
+                            done: btn.classList.contains('active')
+                        };
+                    }
+                }
+            });
+
             localStorage.setItem('pocket_pt_data', JSON.stringify(appData));
             alert('Saved successfully for ' + currentDate + '!');
             updateStreak();
@@ -175,8 +303,8 @@
             let streak = 0;
             let d = new Date();
             while(true) {
-                let key = d.toISOString().split('T')[0];
-                if (appData[key] && (appData[key].weight || appData[key].mood)) {
+                let key = getLocalDateString(d);
+                if (appData[key] && (appData[key].weight || appData[key].mood || (appData[key].habits && Object.values(appData[key].habits).some(Boolean)))) {
                     streak++;
                     d.setDate(d.getDate() - 1);
                 } else {
@@ -190,25 +318,25 @@
             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(appData, null, 2));
             const downloadAnchor = document.createElement('a');
             downloadAnchor.setAttribute("href", dataStr);
-            downloadAnchor.setAttribute("download", "pocket_pt_backup_" + new Date().toISOString().split('T')[0] + ".json");
+            downloadAnchor.setAttribute("download", "pocket_pt_backup_" + getLocalDateString() + ".json");
             document.body.appendChild(downloadAnchor);
             downloadAnchor.click();
             downloadAnchor.remove();
         }
 
         function renderScoreboard() {
-            const entries = Object.keys(appData).sort();
-            let html = entries.length === 0 ? "No logs yet. Start logging from the calendar view!" : `<ul>`;
+            const entries = Object.keys(appData).sort().reverse();
+            let html = entries.length === 0 ? "<p style='color:var(--text-muted); font-size:0.85rem;'>No logged entries found yet.</p>" : "";
+            
             entries.forEach(date => {
                 let entry = appData[date];
-                html += `<li style="margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid var(--border);">
-                    <strong>${date}</strong><br>
+                html += `<div class="scoreboard-item">
+                    <strong>📅 ${date}</strong><br>
                     Weight: ${entry.weight ? entry.weight + ' kg' : 'Not logged'}<br>
                     Notes: ${entry.mood || 'None'}
-                </li>`;
+                </div>`;
             });
-            html += `</ul>`;
-            document.getElementById('stats-summary').innerHTML = html;
+            document.getElementById('scoreboard-list').innerHTML = html;
         }
 
         updateDateDisplay();
