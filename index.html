@@ -398,4 +398,484 @@
       swimTime: "12:15 - 1:00 PM", 
       warmup: "10 Mins Incline Treadmill Walk (Incline 10, Speed 4.5 km/h) + Dynamic Arm Circles & Band Pull-Aparts.",
       cooldown: "5 Mins Chest & Lat Static Stretches (30s hold per side) + Foam Roll Upper Back.",
-      bonus: "Core Finisher: 3 Sets of
+      bonus: "Core Finisher: 3 Sets of 12 Hanging Knee Raises or Controlled Crunches.",
+      exercises: [
+        { name: "Dumbbell Flat Bench Press", cue: "Lie flat, kick DBs to chest. Lower to 90°.", tip: "💡 Top Tip: Keep elbows tucked at 45° and press in a slight arc.", sets: 3, targetReps: 8, key: "bench", swap: "Alternative: Barbell Bench Press or Chest Press Machine" },
+        { name: "Assisted Pull-Up Machine", cue: "Chest to bar. Pin @ 45kg assistance.", tip: "💡 Top Tip: Chest up toward ceiling; pull with your lats, not just arms.", sets: 3, targetReps: 8, key: "pullup", swap: "Alternative: Lat Pulldown or Band-Assisted Pull-Ups" },
+        { name: "Standing Dumbbell Overhead Press", cue: "Core tight, press straight overhead.", tip: "💡 Top Tip: Squeeze glutes hard so your lower back doesn't arch.", sets: 3, targetReps: 8, key: "ohp", swap: "Alternative: Seated DB Press or Machine Shoulder Press" },
+        { name: "Seated Dumbbell Row", cue: "Chest supported or bent over, pull to hips.", tip: "💡 Top Tip: Drive elbows straight back; keep chest tall.", sets: 3, targetReps: 10, key: "row", swap: "Alternative: Chest-Supported DB Row or Seated Cable Row" },
+        { name: "Dumbbell Bicep Curls", cue: "Palms up, strict curl without swinging.", tip: "💡 Top Tip: Lock upper arms completely still; only move forearms.", sets: 3, targetReps: 12, key: "curls", swap: "Alternative: Hammer Curls or EZ Bar Curls" }
+      ]
+    },
+    2: { 
+      title: "Swim & Run Progression 1", 
+      desc: "Balham Pool swim + beginner interval run session.", 
+      swimTime: "12:45 - 1:45 PM", 
+      warmup: "5 Mins Dynamic Leg Swings + Light Joint Mobility.",
+      cooldown: "10 Mins Quad, Hamstring & Calf Static Stretches.",
+      bonus: "Cardio Add-On: 15 Mins low-impact stationary bike spin (Zone 2 heart rate).",
+      exercises: [
+        { name: "Balham Pool Swim Drills", cue: "Easy breathing rhythm, low joint impact.", tip: "💡 Top Tip: Focus on long, relaxed strokes and continuous rhythmic breathing.", sets: 1, targetReps: 12, key: "swim", swap: "Alternative: Stationary Bike or Incline Treadmill Walk" },
+        { name: "Beginner Run Interval", cue: "1 Min jog / 2 Min brisk walk intervals x 20 mins.", tip: "💡 Top Tip: Keep a conversational pace during jogs to build aerobic base safely.", sets: 1, targetReps: 1, key: "run_1", swap: "Alternative: 25 Min Incline Treadmill Power Walk" }
+      ]
+    },
+    3: { 
+      title: "Conditioning & Core", 
+      desc: "Morning explosive circuit + Balham Pool swim.", 
+      swimTime: "12:45 - 1:45 PM", 
+      warmup: "10 Mins Cross-Trainer (Moderate Pace) + Hip Openers.",
+      cooldown: "5 Mins Lower Back & Glute Stretching.",
+      bonus: "Mobility Add-On: 10 Mins hip flexor and lower back stretch protocol.",
+      exercises: [
+        { name: "Kettlebell Swings", cue: "Hinge at hips, snap glutes to pop bell.", tip: "💡 Top Tip: It's a hip snap, not a squat! Let the bell float up.", sets: 4, targetReps: 15, key: "kb_swing", swap: "Alternative: Cable Pull-Throughs or DB Deadlifts" },
+        { name: "Dumbbell Thrusters", cue: "Deep squat into overhead press.", tip: "💡 Top Tip: Use explosive leg power to drive dumbbells overhead.", sets: 4, targetReps: 10, key: "thruster", swap: "Alternative: Goblet Squat + Separate DB Press" },
+        { name: "Rowing Machine Sprint", cue: "1 Min hard effort on machine.", tip: "💡 Top Tip: Legs push first, then lean back, then pull handles to sternum.", sets: 4, targetReps: 1, key: "row_sprint", swap: "Alternative: Assault Bike or SkiErg Sprint" },
+        { name: "Hanging Knee Raises", cue: "Pull knees to chest slowly.", tip: "💡 Top Tip: Control the descent; zero swinging or momentum.", sets: 3, targetReps: 12, key: "knee_raise", swap: "Alternative: Captain's Chair Leg Raises or Lying Floor Crunches" }
+      ]
+    },
+    4: { 
+      title: "Upper Body B (Incline & Width)", 
+      desc: "Morning dumbbell session + Balham Pool swim.", 
+      swimTime: "12:45 - 1:45 PM", 
+      warmup: "10 Mins Treadmill Jog/Walk Mix + Shoulder Mobility Rotations.",
+      cooldown: "5 Mins Tricep & Lateral Shoulder Static Stretches.",
+      bonus: "Grip Finisher: 3 x 30s Farmer's Carries with moderate dumbbells.",
+      exercises: [
+        { name: "Incline Dumbbell Press", cue: "Bench at 30°. Press over upper chest.", tip: "💡 Top Tip: Keep wrists straight and press directly upward over collarbone.", sets: 3, targetReps: 8, key: "inc_bench", swap: "Alternative: Incline Barbell Press or Machine Incline Press" },
+        { name: "Assisted Pull-Up Machine", cue: "Control lower phase. Pin @ 45kg.", tip: "💡 Top Tip: Pause for 1 second at the top with chest touching handle.", sets: 3, targetReps: 8, key: "pullup", swap: "Alternative: Neutral Grip Pulldown or Banded Pull-Ups" },
+        { name: "Dumbbell Chest-Supported Row", cue: "Chest flat on bench, pull DBs to hips.", tip: "💡 Top Tip: Completely eliminates lower back fatigue; isolate lats and mid-back.", sets: 3, targetReps: 10, key: "sup_row", swap: "Alternative: Seated Cable Row or Lat Pulldown" },
+        { name: "Dumbbell Lateral Raises", cue: "Raise out to sides until parallel.", tip: "💡 Top Tip: Pour water out of pitchers with wrists slightly as you raise.", sets: 3, targetReps: 12, key: "lat_raise", swap: "Alternative: Cable Lateral Raises or Machine Side Laterals" },
+        { name: "Overhead Tricep Extensions", cue: "Hold 1 DB behind head, press up.", tip: "💡 Top Tip: Keep elbows pointing forward and close to your head.", sets: 3, targetReps: 12, key: "tricep", swap: "Alternative: Tricep Rope Pushdowns or Dips" }
+      ]
+    },
+    5: { 
+      title: "Lower Body & Core", 
+      desc: "Morning leg session + Balham Pool swim.", 
+      swimTime: "12:45 - 1:45 PM", 
+      warmup: "10 Mins Stationary Bike (Easy Resistance) + Bodyweight Squats & Leg Swings.",
+      cooldown: "10 Mins Deep Hamstring, Quads & Glute Stretches.",
+      bonus: "Calf Focus: 3 x 15 Standing DB Calf Raises on a plate edge.",
+      exercises: [
+        { name: "Dumbbell Goblet Squats", cue: "Hold 1 DB at chest. Squat deep.", tip: "💡 Top Tip: Keep chest up and push knees out in line with toes.", sets: 3, targetReps: 8, key: "goblet", swap: "Alternative: Barbell Back Squat or Leg Press" },
+        { name: "Leg Press Machine", cue: "Feet hip-width, press through heels.", tip: "💡 Top Tip: Do not lock knees completely straight at the top.", sets: 3, targetReps: 10, key: "leg_press", swap: "Alternative: Hack Squat or Goblet Squats" },
+        { name: "Lying / Seated Leg Curls", cue: "Curl heels to glutes, control return.", tip: "💡 Top Tip: Keep hips firmly pinned into pad throughout movement.", sets: 3, targetReps: 10, key: "leg_curl", swap: "Alternative: Romanian Deadlifts or Stability Ball Curls" },
+        { name: "Abdominal Crunch Machine", cue: "Exhale on crunch, pause 1s.", tip: "💡 Top Tip: Focus on curling your ribcage down toward your pelvis.", sets: 3, targetReps: 12, key: "ab_crunch", swap: "Alternative: Cable Crunches or Weighted Sit-ups" }
+      ]
+    },
+    6: { 
+      title: "Weekend Endurance Run & Swim", 
+      desc: "Active movement & cardiovascular capacity.", 
+      swimTime: "12:15 - 1:00 PM", 
+      warmup: "5 Mins Joint Mobility & Dynamic Stretches.",
+      cooldown: "10 Mins Full Body Static Stretching.",
+      bonus: "Outdoor Push: 30-minute continuous brisk walk or 3km light jog/walk mix.",
+      exercises: [
+        { name: "Weekend Aerobic Session", cue: "Steady state movement to boost weekly fat loss.", tip: "💡 Top Tip: Keep heart rate steady and sustainable.", sets: 1, targetReps: 1, key: "sat_rec", swap: "Alternative: Light Cycling or Swimming Laps" }
+      ]
+    },
+    0: { 
+      title: "Full Rest & Recovery", 
+      desc: "Complete rest, weekly metrics check & photo log.", 
+      swimTime: "Hourly Slots (Free Choice)", 
+      warmup: "None (Rest Day).",
+      cooldown: "None (Rest Day).",
+      bonus: "Reset Protocol: Hydration focus (3L+ water), prep meal plan for the week.",
+      exercises: [] 
+    }
+  };
+
+  const weekOverview = [
+    { day: "Monday", title: "Upper Body A + Swim (12:15-1:00)", details: "DB Bench, Assisted Pull-Ups, Overhead Press, DB Rows, Bicep Curls" },
+    { day: "Tuesday", title: "Swim & Run Progression (12:45-1:45)", details: "Balham Pool Laps + Beginner Run Intervals" },
+    { day: "Wednesday", title: "Conditioning & Core + Swim (12:45-1:45)", details: "KB Swings, DB Thrusters, Rowing Sprint, Knee Raises" },
+    { day: "Thursday", title: "Upper Body B + Swim (12:45-1:45)", details: "Incline DB Press, Assisted Pull-Ups, Chest-Supported Row, Laterals, Triceps" },
+    { day: "Friday", title: "Lower Body & Core + Swim (12:45-1:45)", details: "Goblet Squats, Leg Press, Leg Curls, Ab Crunch Machine" },
+    { day: "Saturday", title: "Endurance Run / Walk + Swim (12:15-1:00)", details: "Weekend Outdoor Cardio & Open Swim" },
+    { day: "Sunday", title: "Rest & Reset (Hourly Slots)", details: "Complete Rest, Weekly Size Metrics & Photo Check" }
+  ];
+
+  function getLocalDateString(d = new Date()) {
+    const offset = d.getTimezoneOffset();
+    const localDate = new Date(d.getTime() - (offset*60*1000));
+    return localDate.toISOString().split('T')[0];
+  }
+
+  let currentDate = getLocalDateString();
+  let appData = JSON.parse(localStorage.getItem('kub_all_data')) || {};
+
+  let weights = JSON.parse(localStorage.getItem('kub_weights')) || {
+    bench: "16kg", pullup: "45kg Assist", ohp: "12kg", row: "16kg", curls: "12kg",
+    inc_bench: "14kg", sup_row: "16kg", lat_raise: "6kg", tricep: "12kg",
+    goblet: "16kg", leg_press: "80kg", leg_curl: "35kg"
+  };
+
+  let dailyWater = 0;
+  let dailyPages = 0;
+  const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+  function initApp() {
+    updateDateDisplay();
+    renderProgressionList();
+    loadPhotos();
+    renderWeekAhead();
+    loadMetricsComparison();
+    updateStreak();
+  }
+
+  function updateDateDisplay() {
+    const todayStr = getLocalDateString();
+    const dObj = new Date(currentDate);
+    const dayIdx = dObj.getDay();
+
+    const titleEl = document.getElementById('display-date-title');
+    const subEl = document.getElementById('display-date-sub');
+
+    if (!titleEl || !subEl) return;
+
+    if (currentDate === todayStr) {
+      titleEl.innerText = "Today (" + dayNames[dayIdx] + ")";
+    } else {
+      titleEl.innerText = currentDate + " (" + dayNames[dayIdx] + ")";
+    }
+    subEl.innerText = dObj.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+
+    loadDayData(currentDate, dayIdx);
+  }
+
+  function changeDate(days) {
+    let d = new Date(currentDate);
+    d.setDate(d.getDate() + days);
+    currentDate = getLocalDateString(d);
+    updateDateDisplay();
+  }
+
+  function switchTab(tabId, btn) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    const targetTab = document.getElementById('tab-' + tabId);
+    if (targetTab) targetTab.classList.add('active');
+    if (btn) btn.classList.add('active');
+  }
+
+  function loadDayData(dateStr, dayIdx) {
+    const w = workouts[dayIdx] || workouts[0];
+    const workoutTitleEl = document.getElementById('workout-title');
+    const workoutDescEl = document.getElementById('workout-desc');
+    const warmupDirectiveEl = document.getElementById('warmup-directive');
+    const cooldownDirectiveEl = document.getElementById('cooldown-directive');
+    const bonusDirectiveEl = document.getElementById('bonus-directive');
+
+    if (workoutTitleEl) workoutTitleEl.innerText = w.title;
+    if (workoutDescEl) workoutDescEl.innerText = w.desc;
+    if (warmupDirectiveEl) warmupDirectiveEl.innerText = w.warmup || "Dynamic mobility & light activation.";
+    if (cooldownDirectiveEl) cooldownDirectiveEl.innerText = w.cooldown || "Full-body static stretching.";
+    if (bonusDirectiveEl) bonusDirectiveEl.innerText = w.bonus || "Core and mobility finish.";
+
+    const swimContainer = document.getElementById('swim-container');
+    const dayRecord = appData[dateStr] || { workout: {}, macros: {}, meds: false, mood: '', cardio: '', steps: '', water: 0, pages: 0, swimDone: false };
+    
+    dailyWater = dayRecord.water || 0;
+    dailyPages = dayRecord.pages || 0;
+    updateHabitDisplays();
+
+    const calsEl = document.getElementById('macro-cals');
+    const protEl = document.getElementById('macro-protein');
+    const carbEl = document.getElementById('macro-carbs');
+    const fatEl = document.getElementById('macro-fat');
+    if (calsEl) calsEl.value = (dayRecord.macros && dayRecord.macros.cals) || '';
+    if (protEl) protEl.value = (dayRecord.macros && dayRecord.macros.protein) || '';
+    if (carbEl) carbEl.value = (dayRecord.macros && dayRecord.macros.carbs) || '';
+    if (fatEl) fatEl.value = (dayRecord.macros && dayRecord.macros.fat) || '';
+
+    const medsCheck = document.getElementById('meds-check');
+    const logMood = document.getElementById('log-mood');
+    const cardioInput = document.getElementById('cardio-input');
+    const stepsInput = document.getElementById('steps-input');
+
+    if (medsCheck) medsCheck.checked = !!dayRecord.meds;
+    if (logMood) logMood.value = dayRecord.mood || '';
+    if (cardioInput) cardioInput.value = dayRecord.cardio || '';
+    if (stepsInput) stepsInput.value = dayRecord.steps || '';
+
+    if (swimContainer) {
+      swimContainer.innerHTML = `
+        <div style="background: #0f172a; border: 1px solid var(--card-border); padding: 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-weight:700; font-size:0.85rem; color:var(--green);">🏊 Scheduled Swim</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">Window: ${w.swimTime}</div>
+          </div>
+          <label style="font-size:0.8rem; font-weight:600; display:flex; align-items:center; gap:6px; cursor:pointer;">
+            <input type="checkbox" id="swim-check" ${dayRecord.swimDone ? 'checked' : ''} style="width:16px; height:16px; accent-color:var(--green);"> Done
+          </label>
+        </div>`;
+    }
+
+    const list = document.getElementById('exercise-list');
+    if (!list) return;
+    list.innerHTML = '';
+
+    if (!w.exercises || w.exercises.length === 0) {
+      list.innerHTML = `<p style="font-size:0.9rem; color:var(--text-muted); padding:10px 0;">Enjoy your rest day! Hourly pool slots available if desired.</p>`;
+      return;
+    }
+
+    w.exercises.forEach((ex, exIdx) => {
+      const currentW = weights[ex.key] || "BW";
+      let setsHTML = '';
+      const savedExData = (dayRecord.workout && dayRecord.workout[exIdx]) || {};
+      
+      for (let s = 1; s <= ex.sets; s++) {
+        const savedReps = (savedExData[s] !== undefined) ? savedExData[s] : '';
+        setsHTML += `
+          <div class="set-row">
+            <label>Set ${s}:</label>
+            <input type="number" placeholder="${ex.targetReps}" id="ex-${exIdx}-s${s}" value="${savedReps}" oninput="checkExerciseComplete(${exIdx}, ${ex.sets})">
+            <span style="color:var(--text-muted); font-size:0.8rem;">reps</span>
+          </div>`;
+      }
+
+      list.innerHTML += `
+        <div class="exercise-card ${savedExData.completed ? 'completed' : ''}" id="card-ex-${exIdx}">
+          <div class="exercise-title">
+            <span>${ex.name}</span>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <input type="text" class="weight-override" id="weight-override-${ex.key}" value="${currentW}" onchange="updateWorkingWeight('${ex.key}', this.value)" title="Tap to adjust weight">
+              <button class="swap-btn" onclick="showSwapInfo('${ex.name}', '${ex.swap}')">Swap</button>
+            </div>
+          </div>
+          <div class="exercise-cue">${ex.cue}</div>
+          <div class="top-tip">${ex.tip}</div>
+          ${setsHTML}
+        </div>`;
+    });
+  }
+
+  function updateWorkingWeight(key, newVal) {
+    weights[key] = newVal;
+    localStorage.setItem('kub_weights', JSON.stringify(weights));
+    renderProgressionList();
+  }
+
+  function showSwapInfo(exName, swapText) {
+    alert(`Smart Biomechanical Swap for ${exName}:\n\n${swapText}`);
+  }
+
+  function checkExerciseComplete(exIdx, totalSets) {
+    let completed = true;
+    for (let s = 1; s <= totalSets; s++) {
+      const inputEl = document.getElementById(`ex-${exIdx}-s${s}`);
+      if (!inputEl || !inputEl.value || inputEl.value.trim() === "") { completed = false; break; }
+    }
+    const card = document.getElementById(`card-ex-${exIdx}`);
+    if (card) {
+      if (completed) card.classList.add('completed');
+      else card.classList.remove('completed');
+    }
+  }
+
+  function addWater(amount) {
+    dailyWater += amount;
+    if (dailyWater < 0) dailyWater = 0;
+    updateHabitDisplays();
+  }
+
+  function addPages() {
+    let input = prompt("Enter pages read today:", "10");
+    if (input && !isNaN(input)) {
+      dailyPages += parseInt(input);
+      updateHabitDisplays();
+    }
+  }
+
+  function updateHabitDisplays() {
+    const waterEl = document.getElementById('water-display');
+    const pagesEl = document.getElementById('pages-display');
+    if (waterEl) waterEl.innerText = dailyWater + " ml";
+    if (pagesEl) pagesEl.innerText = dailyPages + " pages";
+  }
+
+  function saveTodayWorkout() {
+    const medsCheck = document.getElementById('meds-check');
+    const medsTaken = medsCheck ? medsCheck.checked : false;
+    if(!medsTaken) {
+      if(!confirm("You haven't ticked your meds checkbox. Log anyway?")) return;
+    }
+
+    const dObj = new Date(currentDate);
+    const dayIdx = dObj.getDay();
+    const w = workouts[dayIdx] || workouts[0];
+
+    let workoutRecord = {};
+    if (w.exercises) {
+      w.exercises.forEach((ex, exIdx) => {
+        workoutRecord[exIdx] = {};
+        for (let s = 1; s <= ex.sets; s++) {
+          const valEl = document.getElementById(`ex-${exIdx}-s${s}`);
+          workoutRecord[exIdx][s] = valEl ? valEl.value : '';
+        }
+        const card = document.getElementById(`card-ex-${exIdx}`);
+        workoutRecord[exIdx].completed = card && card.classList.contains('completed');
+      });
+    }
+
+    const swimDoneEl = document.getElementById('swim-check');
+    const calsEl = document.getElementById('macro-cals');
+    const protEl = document.getElementById('macro-protein');
+    const carbEl = document.getElementById('macro-carbs');
+    const fatEl = document.getElementById('macro-fat');
+    const logMood = document.getElementById('log-mood');
+    const cardioInput = document.getElementById('cardio-input');
+    const stepsInput = document.getElementById('steps-input');
+
+    appData[currentDate] = {
+      workout: workoutRecord,
+      water: dailyWater,
+      pages: dailyPages,
+      macros: {
+        cals: calsEl ? calsEl.value : '',
+        protein: protEl ? protEl.value : '',
+        carbs: carbEl ? carbEl.value : '',
+        fat: fatEl ? fatEl.value : ''
+      },
+      meds: medsTaken,
+      mood: logMood ? logMood.value : '',
+      cardio: cardioInput ? cardioInput.value : '',
+      steps: stepsInput ? stepsInput.value : '',
+      swimDone: swimDoneEl ? swimDoneEl.checked : false
+    };
+
+    localStorage.setItem('kub_all_data', JSON.stringify(appData));
+    alert("Saved successfully for " + currentDate + "!");
+    updateStreak();
+  }
+
+  function updateStreak() {
+    let streak = 0;
+    let d = new Date();
+    while(true) {
+      let key = getLocalDateString(d);
+      if (appData[key] && (appData[key].meds || appData[key].water > 0 || Object.keys(appData[key].workout || {}).length > 0)) {
+        streak++;
+        d.setDate(d.getDate() - 1);
+      } else {
+        break;
+      }
+    }
+    const streakEl = document.getElementById('current-streak');
+    if (streakEl) streakEl.innerText = `🔥 ${streak} Streak`;
+  }
+
+  function exportData() {
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(appData, null, 2));
+    const downloadAnchor = document.createElement('a');
+    downloadAnchor.setAttribute("href", dataStr);
+    downloadAnchor.setAttribute("download", "kub_backup_" + getLocalDateString() + ".json");
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+  }
+
+  function renderProgressionList() {
+    const list = document.getElementById('progression-list');
+    if (!list) return;
+    list.innerHTML = '<p style="font-size:0.78rem; color:var(--text-muted); margin-bottom:8px;">Current active weights per exercise (tap inputs on Today view to change):</p>';
+    for (let k in weights) {
+      list.innerHTML += `<div style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid var(--card-border);">
+        <span style="text-transform:capitalize;">${k.replace('_', ' ')}</span>
+        <span style="color:var(--accent); font-weight:bold;">${weights[k]}</span>
+      </div>`;
+    }
+  }
+
+  function saveMetrics() {
+    const weightInput = document.getElementById('m-weight');
+    const waistInput = document.getElementById('m-waist');
+    const chestInput = document.getElementById('m-chest');
+    const bicepInput = document.getElementById('m-bicep');
+    const thighInput = document.getElementById('m-thigh');
+
+    const m = {
+      weight: weightInput ? parseFloat(weightInput.value) || 0 : 0,
+      waist: waistInput ? parseFloat(waistInput.value) || 0 : 0,
+      chest: chestInput ? parseFloat(chestInput.value) || 0 : 0,
+      bicep: bicepInput ? parseFloat(bicepInput.value) || 0 : 0,
+      thigh: thighInput ? parseFloat(thighInput.value) || 0 : 0,
+      date: new Date().toLocaleDateString()
+    };
+    
+    if(!localStorage.getItem('kub_baseline')) {
+      localStorage.setItem('kub_baseline', JSON.stringify(m));
+      alert("Baseline metrics locked in! Let the competition begin.");
+    } else {
+      localStorage.setItem('kub_current', JSON.stringify(m));
+      alert("Weekly metrics saved and compared against baseline!");
+    }
+    loadMetricsComparison();
+  }
+
+  function loadMetricsComparison() {
+    const baseline = JSON.parse(localStorage.getItem('kub_baseline'));
+    const current = JSON.parse(localStorage.getItem('kub_current')) || baseline;
+    const container = document.getElementById('comparison-stats');
+
+    if (!container || !baseline) return;
+
+    let wDiff = (current.weight - baseline.weight).toFixed(1);
+    let waistDiff = (current.waist - baseline.waist).toFixed(1);
+
+    container.innerHTML = `
+      <div style="margin-bottom:8px;"><b>Baseline Weight:</b> ${baseline.weight} kg | <b>Current:</b> ${current.weight} kg <span style="color:${wDiff <= 0 ? 'var(--green)' : 'var(--red)'}; font-weight:bold;">(${wDiff <= 0 ? wDiff : '+' + wDiff} kg)</span></div>
+      <div style="margin-bottom:8px;"><b>Baseline Waist:</b> ${baseline.waist} cm | <b>Current:</b> ${current.waist} cm <span style="color:${waistDiff <= 0 ? 'var(--green)' : 'var(--red)'}; font-weight:bold;">(${waistDiff <= 0 ? waistDiff : '+' + waistDiff} cm)</span></div>
+      <div style="background:#0f172a; padding:10px; border-radius:6px; margin-top:10px; border:1px dashed var(--accent);">
+        🚀 <b>4-Week Projection:</b> At your current deficit pace, you are on track to drop an estimated <b>2.5kg – 4kg</b> and lean out your waist significantly. Keep crushing the habits!
+      </div>
+    `;
+  }
+
+  function renderWeekAhead() {
+    const container = document.getElementById('week-ahead-container');
+    if (!container) return;
+    container.innerHTML = '';
+    weekOverview.forEach(item => {
+      container.innerHTML += `
+        <div class="week-ahead-row">
+          <div><b>${item.day}:</b> ${item.title}</div>
+          <div style="font-size:0.75rem; color:var(--text-muted); text-align:right; max-width:180px;">${item.details}</div>
+        </div>`;
+    });
+  }
+
+  function handlePhoto(input, key) {
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const previewEl = document.getElementById('prev-' + key);
+        const dateEl = document.getElementById('date-' + key);
+        if (previewEl) previewEl.innerHTML = `<img src="${e.target.result}">`;
+        const dateStr = new Date().toLocaleDateString();
+        if (dateEl) dateEl.innerText = dateStr;
+        localStorage.setItem('kub_img_' + key, e.target.result);
+        localStorage.setItem('kub_date_' + key, dateStr);
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  function loadPhotos() {
+    ['p1', 'p2', 'p3', 'p4'].forEach(key => {
+      const img = localStorage.getItem('kub_img_' + key);
+      const date = localStorage.getItem('kub_date_' + key);
+      const previewEl = document.getElementById('prev-' + key);
+      const dateEl = document.getElementById('date-' + key);
+      if (img && previewEl) {
+        previewEl.innerHTML = `<img src="${img}">`;
+        if (date && dateEl) dateEl.innerText = date;
+      }
+    });
+  }
+
+  // Execute initialization immediately
+  initApp();
+</script>
+</body>
+</html>
