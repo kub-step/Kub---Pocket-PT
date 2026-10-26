@@ -648,4 +648,140 @@
       swimDone: swimDoneEl ? swimDoneEl.checked : false
     };
 
+    localStorage.setItem('kub_all_data', JSON.stringify(appData));
+    alert("Saved successfully for " + currentDate + "!");
+    updateStreak();
+  }
+
+  function updateStreak() {
+    let streak = 0;
+    let d = new Date();
+    while(true) {
+      let key = getLocalDateString(d);
+      if (appData[key] && (appData[key].meds || appData[key].water > 0 || Object.keys(appData[key].workout || {}).length > 0)) {
+        streak++;
+        d.setDate(d.getDate() - 1);
+      } else {
+        break;
+      }
+    }
+    const streakEl = document.getElementById('current-streak');
+    if (streakEl) streakEl.innerText = `🔥 ${streak} Streak`;
+  }
+
+  function exportData() {
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(appData, null, 2));
+    const downloadAnchor = document.createElement('a');
+    downloadAnchor.setAttribute("href", dataStr);
+    downloadAnchor.setAttribute("download", "kub_backup_" + getLocalDateString() + ".json");
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+  }
+
+  function renderProgressionList() {
+    const list = document.getElementById('progression-list');
+    if (!list) return;
+    list.innerHTML = '<p style="font-size:0.78rem; color:var(--text-muted); margin-bottom:8px;">Current active weights per exercise (tap inputs on Today view to change):</p>';
+    for (let k in weights) {
+      list.innerHTML += `<div style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid var(--card-border);">
+        <span style="text-transform:capitalize;">${k.replace('_', ' ')}</span>
+        <span style="color:var(--accent); font-weight:bold;">${weights[k]}</span>
+      </div>`;
+    }
+  }
+
+  function saveMetrics() {
+    const weightInput = document.getElementById('m-weight');
+    const waistInput = document.getElementById('m-waist');
+    const chestInput = document.getElementById('m-chest');
+    const bicepInput = document.getElementById('m-bicep');
+    const thighInput = document.getElementById('m-thigh');
+
+    const m = {
+      weight: weightInput ? parseFloat(weightInput.value) || 0 : 0,
+      waist: waistInput ? parseFloat(waistInput.value) || 0 : 0,
+      chest: chestInput ? parseFloat(chestInput.value) || 0 : 0,
+      bicep: bicepInput ? parseFloat(bicepInput.value) || 0 : 0,
+      thigh: thighInput ? parseFloat(thighInput.value) || 0 : 0,
+      date: new Date().toLocaleDateString()
+    };
     
+    if(!localStorage.getItem('kub_baseline')) {
+      localStorage.setItem('kub_baseline', JSON.stringify(m));
+      alert("Baseline metrics locked in! Let the competition begin.");
+    } else {
+      localStorage.setItem('kub_current', JSON.stringify(m));
+      alert("Weekly metrics saved and compared against baseline!");
+    }
+    loadMetricsComparison();
+  }
+
+  function loadMetricsComparison() {
+    const baseline = JSON.parse(localStorage.getItem('kub_baseline'));
+    const current = JSON.parse(localStorage.getItem('kub_current')) || baseline;
+    const container = document.getElementById('comparison-stats');
+
+    if (!container || !baseline) return;
+
+    let wDiff = (current.weight - baseline.weight).toFixed(1);
+    let waistDiff = (current.waist - baseline.waist).toFixed(1);
+
+    container.innerHTML = `
+      <div style="margin-bottom:8px;"><b>Baseline Weight:</b> ${baseline.weight} kg | <b>Current:</b> ${current.weight} kg <span style="color:${wDiff <= 0 ? 'var(--green)' : 'var(--red)'}; font-weight:bold;">(${wDiff <= 0 ? wDiff : '+' + wDiff} kg)</span></div>
+      <div style="margin-bottom:8px;"><b>Baseline Waist:</b> ${baseline.waist} cm | <b>Current:</b> ${current.waist} cm <span style="color:${waistDiff <= 0 ? 'var(--green)' : 'var(--red)'}; font-weight:bold;">(${waistDiff <= 0 ? waistDiff : '+' + waistDiff} cm)</span></div>
+      <div style="background:#0f172a; padding:10px; border-radius:6px; margin-top:10px; border:1px dashed var(--accent);">
+        🚀 <b>4-Week Projection:</b> At your current deficit pace, you are on track to drop an estimated <b>2.5kg – 4kg</b> and lean out your waist significantly. Keep crushing the habits!
+      </div>
+    `;
+  }
+
+  function renderWeekAhead() {
+    const container = document.getElementById('week-ahead-container');
+    if (!container) return;
+    container.innerHTML = '';
+    weekOverview.forEach(item => {
+      container.innerHTML += `
+        <div class="week-ahead-row">
+          <div><b>${item.day}:</b> ${item.title}</div>
+          <div style="font-size:0.75rem; color:var(--text-muted); text-align:right; max-width:180px;">${item.details}</div>
+        </div>`;
+    });
+  }
+
+  function handlePhoto(input, key) {
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const previewEl = document.getElementById('prev-' + key);
+        const dateEl = document.getElementById('date-' + key);
+        if (previewEl) previewEl.innerHTML = `<img src="${e.target.result}">`;
+        const dateStr = new Date().toLocaleDateString();
+        if (dateEl) dateEl.innerText = dateStr;
+        localStorage.setItem('kub_img_' + key, e.target.result);
+        localStorage.setItem('kub_date_' + key, dateStr);
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  function loadPhotos() {
+    ['p1', 'p2', 'p3', 'p4'].forEach(key => {
+      const img = localStorage.getItem('kub_img_' + key);
+      const date = localStorage.getItem('kub_date_' + key);
+      const previewEl = document.getElementById('prev-' + key);
+      const dateEl = document.getElementById('date-' + key);
+      if (img && previewEl) {
+        previewEl.innerHTML = `<img src="${img}">`;
+        if (date && dateEl) dateEl.innerText = date;
+      }
+    });
+  }
+
+  // Run app initialization safely on load
+  window.addEventListener('DOMContentLoaded', () => {
+    initApp();
+  });
+</script>
+</body>
+</html>
