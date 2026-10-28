@@ -138,13 +138,13 @@
       </div>
 
       <div class="time-block" style="border-left-color: var(--green);">
-        <div class="time-block-title" style="color: var(--green);">🌙 Afternoon Block & Swim</div>
+        <div class="time-block-title" style="color: var(--green);">🌙 Afternoon & Evening Block</div>
         <div id="swim-container" style="margin-bottom: 12px;"></div>
         
         <div class="grid-2">
           <div class="input-group">
-            <label>Cardio Log:</label>
-            <input type="text" id="cardio-input" placeholder="e.g., 20 min walk / 150 kcal">
+            <label>Cardio / Run Log:</label>
+            <input type="text" id="cardio-input" placeholder="e.g., 20 min run / 150 kcal">
           </div>
           <div class="input-group">
             <label>Steps Log:</label>
@@ -394,8 +394,8 @@
   const workouts = {
     1: { 
       title: "Upper Body A (Push/Pull Foundation)", 
-      desc: "Compound dumbbell focus + Balham Pool swim.", 
-      swimTime: "12:15 - 1:00 PM", 
+      desc: "Compound dumbbell focus & core integration.", 
+      swimHtml: null,
       warmup: "10 Mins Incline Treadmill Walk (Incline 10, Speed 4.5 km/h) + Dynamic Arm Circles & Band Pull-Aparts.",
       cooldown: "5 Mins Chest & Lat Static Stretches (30s hold per side) + Foam Roll Upper Back.",
       bonus: "Core Finisher: 3 Sets of 12 Hanging Knee Raises or Controlled Crunches.",
@@ -409,20 +409,27 @@
     },
     2: { 
       title: "Swim & Run Progression 1", 
-      desc: "Balham Pool swim + beginner interval run session.", 
-      swimTime: "12:45 - 1:45 PM", 
+      desc: "Balham Pool swim + Afternoon/Evening Run Session.", 
+      swimHtml: `<div style="background: #0f172a; border: 1px solid var(--card-border); padding: 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-weight:700; font-size:0.85rem; color:var(--green);">🏊 Scheduled Swim</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">Window: 12:45 - 1:45 PM</div>
+          </div>
+          <label style="font-size:0.8rem; font-weight:600; display:flex; align-items:center; gap:6px; cursor:pointer;">
+            <input type="checkbox" id="swim-check" style="width:16px; height:16px; accent-color:var(--green);"> Done
+          </label>
+        </div>`,
       warmup: "5 Mins Dynamic Leg Swings + Light Joint Mobility.",
       cooldown: "10 Mins Quad, Hamstring & Calf Static Stretches.",
-      bonus: "Cardio Add-On: 15 Mins low-impact stationary bike spin (Zone 2 heart rate).",
+      bonus: "Afternoon/Evening Run Protocol: 20 Mins Total (1 Min Jog / 2 Min Brisk Walk intervals).",
       exercises: [
-        { name: "Balham Pool Swim Drills", cue: "Easy breathing rhythm, low joint impact.", tip: "💡 Top Tip: Focus on long, relaxed strokes and continuous rhythmic breathing.", sets: 1, targetReps: 12, key: "swim", swap: "Alternative: Stationary Bike or Incline Treadmill Walk" },
-        { name: "Beginner Run Interval", cue: "1 Min jog / 2 Min brisk walk intervals x 20 mins.", tip: "💡 Top Tip: Keep a conversational pace during jogs to build aerobic base safely.", sets: 1, targetReps: 1, key: "run_1", swap: "Alternative: 25 Min Incline Treadmill Power Walk" }
+        { name: "Balham Pool Swim Drills", cue: "Easy breathing rhythm, low joint impact.", tip: "💡 Top Tip: Focus on long, relaxed strokes and continuous rhythmic breathing.", sets: 1, targetReps: 12, key: "swim", swap: "Alternative: Stationary Bike or Incline Treadmill Walk" }
       ]
     },
     3: { 
       title: "Conditioning & Core", 
-      desc: "Morning explosive circuit + Balham Pool swim.", 
-      swimTime: "12:45 - 1:45 PM", 
+      desc: "Morning explosive circuit & metabolic conditioning.", 
+      swimHtml: null,
       warmup: "10 Mins Cross-Trainer (Moderate Pace) + Hip Openers.",
       cooldown: "5 Mins Lower Back & Glute Stretching.",
       bonus: "Mobility Add-On: 10 Mins hip flexor and lower back stretch protocol.",
@@ -435,8 +442,16 @@
     },
     4: { 
       title: "Upper Body B (Incline & Width)", 
-      desc: "Morning dumbbell session + Balham Pool swim.", 
-      swimTime: "12:45 - 1:45 PM", 
+      desc: "Morning dumbbell session & upper back focus.", 
+      swimHtml: `<div style="background: #0f172a; border: 1px solid var(--card-border); padding: 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-weight:700; font-size:0.85rem; color:var(--green);">🏊 Scheduled Swim</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">Window: 12:45 - 1:45 PM</div>
+          </div>
+          <label style="font-size:0.8rem; font-weight:600; display:flex; align-items:center; gap:6px; cursor:pointer;">
+            <input type="checkbox" id="swim-check" style="width:16px; height:16px; accent-color:var(--green);"> Done
+          </label>
+        </div>`,
       warmup: "10 Mins Treadmill Jog/Walk Mix + Shoulder Mobility Rotations.",
       cooldown: "5 Mins Tricep & Lateral Shoulder Static Stretches.",
       bonus: "Grip Finisher: 3 x 30s Farmer's Carries with moderate dumbbells.",
@@ -450,8 +465,16 @@
     },
     5: { 
       title: "Lower Body & Core", 
-      desc: "Morning leg session + Balham Pool swim.", 
-      swimTime: "12:45 - 1:45 PM", 
+      desc: "Morning leg session & structural strength.", 
+      swimHtml: `<div style="background: #0f172a; border: 1px solid var(--card-border); padding: 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-weight:700; font-size:0.85rem; color:var(--green);">🏊 Scheduled Swim</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">Window: 12:45 - 1:45 PM</div>
+          </div>
+          <label style="font-size:0.8rem; font-weight:600; display:flex; align-items:center; gap:6px; cursor:pointer;">
+            <input type="checkbox" id="swim-check" style="width:16px; height:16px; accent-color:var(--green);"> Done
+          </label>
+        </div>`,
       warmup: "10 Mins Stationary Bike (Easy Resistance) + Bodyweight Squats & Leg Swings.",
       cooldown: "10 Mins Deep Hamstring, Quads & Glute Stretches.",
       bonus: "Calf Focus: 3 x 15 Standing DB Calf Raises on a plate edge.",
@@ -463,12 +486,20 @@
       ]
     },
     6: { 
-      title: "Weekend Endurance Run & Swim", 
-      desc: "Active movement & cardiovascular capacity.", 
-      swimTime: "12:15 - 1:00 PM", 
+      title: "Weekend Morning Run Progression & Swim", 
+      desc: "Morning Run Progression + Open Swim.", 
+      swimHtml: `<div style="background: #0f172a; border: 1px solid var(--card-border); padding: 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-weight:700; font-size:0.85rem; color:var(--green);">🏊 Scheduled Swim</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">Window: 12:15 - 1:00 PM</div>
+          </div>
+          <label style="font-size:0.8rem; font-weight:600; display:flex; align-items:center; gap:6px; cursor:pointer;">
+            <input type="checkbox" id="swim-check" style="width:16px; height:16px; accent-color:var(--green);"> Done
+          </label>
+        </div>`,
       warmup: "5 Mins Joint Mobility & Dynamic Stretches.",
       cooldown: "10 Mins Full Body Static Stretching.",
-      bonus: "Outdoor Push: 30-minute continuous brisk walk or 3km light jog/walk mix.",
+      bonus: "Morning Run Protocol: 25 Mins Continuous Brisk Walk / Light Jog mix.",
       exercises: [
         { name: "Weekend Aerobic Session", cue: "Steady state movement to boost weekly fat loss.", tip: "💡 Top Tip: Keep heart rate steady and sustainable.", sets: 1, targetReps: 1, key: "sat_rec", swap: "Alternative: Light Cycling or Swimming Laps" }
       ]
@@ -476,7 +507,15 @@
     0: { 
       title: "Full Rest & Recovery", 
       desc: "Complete rest, weekly metrics check & photo log.", 
-      swimTime: "Hourly Slots (Free Choice)", 
+      swimHtml: `<div style="background: #0f172a; border: 1px solid var(--card-border); padding: 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-weight:700; font-size:0.85rem; color:var(--green);">🏊 Optional Open Swim</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">Window: Hourly Slots (Free Choice)</div>
+          </div>
+          <label style="font-size:0.8rem; font-weight:600; display:flex; align-items:center; gap:6px; cursor:pointer;">
+            <input type="checkbox" id="swim-check" style="width:16px; height:16px; accent-color:var(--green);"> Done
+          </label>
+        </div>`, 
       warmup: "None (Rest Day).",
       cooldown: "None (Rest Day).",
       bonus: "Reset Protocol: Hydration focus (3L+ water), prep meal plan for the week.",
@@ -485,13 +524,13 @@
   };
 
   const weekOverview = [
-    { day: "Monday", title: "Upper Body A + Swim (12:15-1:00)", details: "DB Bench, Assisted Pull-Ups, Overhead Press, DB Rows, Bicep Curls" },
-    { day: "Tuesday", title: "Swim & Run Progression (12:45-1:45)", details: "Balham Pool Laps + Beginner Run Intervals" },
-    { day: "Wednesday", title: "Conditioning & Core + Swim (12:45-1:45)", details: "KB Swings, DB Thrusters, Rowing Sprint, Knee Raises" },
-    { day: "Thursday", title: "Upper Body B + Swim (12:45-1:45)", details: "Incline DB Press, Assisted Pull-Ups, Chest-Supported Row, Laterals, Triceps" },
-    { day: "Friday", title: "Lower Body & Core + Swim (12:45-1:45)", details: "Goblet Squats, Leg Press, Leg Curls, Ab Crunch Machine" },
-    { day: "Saturday", title: "Endurance Run / Walk + Swim (12:15-1:00)", details: "Weekend Outdoor Cardio & Open Swim" },
-    { day: "Sunday", title: "Rest & Reset (Hourly Slots)", details: "Complete Rest, Weekly Size Metrics & Photo Check" }
+    { day: "Monday", title: "Upper Body A + Core", details: "DB Bench, Assisted Pull-Ups, Overhead Press, DB Rows, Bicep Curls" },
+    { day: "Tuesday", title: "Swim (12:45-1:45) + Run Progression", details: "Balham Pool Laps + Evening Run Intervals" },
+    { day: "Wednesday", title: "Conditioning & Core", details: "KB Swings, DB Thrusters, Rowing Sprint, Knee Raises" },
+    { day: "Thursday", title: "Upper Body B + Swim (12:45-1:45)", details: "Incline DB Press, Assisted Pull-Ups, Chest-Supported Row, Laterals, Triceps + Swim" },
+    { day: "Friday", title: "Lower Body & Core + Swim (12:45-1:45)", details: "Goblet Squats, Leg Press, Leg Curls, Ab Crunch Machine + Swim" },
+    { day: "Saturday", title: "Morning Run Progression + Swim (12:15-1:00)", details: "Weekend Outdoor Run Mix & Open Swim" },
+    { day: "Sunday", title: "Rest & Reset (Weekly Metrics)", details: "Complete Rest, Weekly Size Metrics & Photo Check" }
   ];
 
   function getLocalDateString(d = new Date()) {
@@ -506,7 +545,8 @@
   let weights = JSON.parse(localStorage.getItem('kub_weights')) || {
     bench: "16kg", pullup: "45kg Assist", ohp: "12kg", row: "16kg", curls: "12kg",
     inc_bench: "14kg", sup_row: "16kg", lat_raise: "6kg", tricep: "12kg",
-    goblet: "16kg", leg_press: "80kg", leg_curl: "35kg"
+    goblet: "16kg", leg_press: "80kg", leg_curl: "35kg",
+    kb_swing: "12kg", thruster: "10kg", row_sprint: "Lvl 5", knee_raise: "BW"
   };
 
   let dailyWater = 0;
@@ -598,16 +638,15 @@
     if (stepsInput) stepsInput.value = dayRecord.steps || '';
 
     if (swimContainer) {
-      swimContainer.innerHTML = `
-        <div style="background: #0f172a; border: 1px solid var(--card-border); padding: 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
-          <div>
-            <div style="font-weight:700; font-size:0.85rem; color:var(--green);">🏊 Scheduled Swim</div>
-            <div style="font-size:0.75rem; color:var(--text-muted);">Window: ${w.swimTime}</div>
-          </div>
-          <label style="font-size:0.8rem; font-weight:600; display:flex; align-items:center; gap:6px; cursor:pointer;">
-            <input type="checkbox" id="swim-check" ${dayRecord.swimDone ? 'checked' : ''} style="width:16px; height:16px; accent-color:var(--green);"> Done
-          </label>
-        </div>`;
+      if (w.swimHtml) {
+        swimContainer.style.display = 'block';
+        swimContainer.innerHTML = w.swimHtml;
+        const swimCheck = document.getElementById('swim-check');
+        if (swimCheck) swimCheck.checked = !!dayRecord.swimDone;
+      } else {
+        swimContainer.style.display = 'none';
+        swimContainer.innerHTML = '';
+      }
     }
 
     const list = document.getElementById('exercise-list');
@@ -615,12 +654,12 @@
     list.innerHTML = '';
 
     if (!w.exercises || w.exercises.length === 0) {
-      list.innerHTML = `<p style="font-size:0.9rem; color:var(--text-muted); padding:10px 0;">Enjoy your rest day! Hourly pool slots available if desired.</p>`;
+      list.innerHTML = `<p style="font-size:0.9rem; color:var(--text-muted); padding:10px 0;">Enjoy your rest day! Focus on recovery, hydration, and nutrition.</p>`;
       return;
     }
 
     w.exercises.forEach((ex, exIdx) => {
-      const currentW = weights[ex.key] || "BW";
+      const currentW = weights[ex.key] || "12kg";
       let setsHTML = '';
       const savedExData = (dayRecord.workout && dayRecord.workout[exIdx]) || {};
       
